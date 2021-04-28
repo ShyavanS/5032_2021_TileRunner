@@ -16,10 +16,10 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
  */
 public class Robot extends TimedRobot {
   // Declare motor controllers
-  private final WPI_VictorSPX leftFront = new WPI_VictorSPX(0);
-  private final WPI_VictorSPX leftRear = new WPI_VictorSPX(1);
-  private final WPI_VictorSPX rightFront = new WPI_VictorSPX(2);
-  private final WPI_VictorSPX rightRear = new WPI_VictorSPX(3);
+  private final WPI_VictorSPX leftFront = new WPI_VictorSPX(1);
+  private final WPI_VictorSPX leftRear = new WPI_VictorSPX(5);
+  private final WPI_VictorSPX rightFront = new WPI_VictorSPX(0);
+  private final WPI_VictorSPX rightRear = new WPI_VictorSPX(4);
 
   // Group motors together for each side
   private final SpeedControllerGroup leftVictors = new SpeedControllerGroup(leftFront, leftRear);
