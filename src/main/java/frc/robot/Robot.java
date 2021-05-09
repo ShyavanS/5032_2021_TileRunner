@@ -42,10 +42,8 @@ public class Robot extends TimedRobot {
     // That means that the Y axis drives forward
     // and backward, and the X turns left and right.
     if (driveStick.getRawButton(R1)) { // Slow mode
-      // robotDrive.arcadeDrive(-driveStick.getX() * sensitivity, driveStick.getY() * sensitivity);
       robotDrive.tankDrive(-driveStick.getY() * sensitivity, -driveStick.getRawAxis(3) * sensitivity);
     } else { // Normal drive
-      // robotDrive.arcadeDrive(-driveStick.getX(), driveStick.getY());
       robotDrive.tankDrive(-driveStick.getY(), -driveStick.getRawAxis(3));
     }
   }
