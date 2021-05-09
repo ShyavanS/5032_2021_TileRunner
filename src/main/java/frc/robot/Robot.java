@@ -34,15 +34,19 @@ public class Robot extends TimedRobot {
   // Button ID for slow mode button
   private final int R1 = 6;
 
+  private final double sensitivity = 0.5;
+
   @Override
   public void teleopPeriodic() {
     // Drive with arcade drive.
     // That means that the Y axis drives forward
     // and backward, and the X turns left and right.
     if (driveStick.getRawButton(R1)) { // Slow mode
-      robotDrive.arcadeDrive(driveStick.getY() * 0.5, -driveStick.getX() * 0.5);
+      robotDrive.arcadeDrive(-driveStick.getX() * sensitivity, driveStick.getY() * sensitivity);
+      // robotDrive.tankDrive(-driveStick.getY() * sensitivity, -driveStick.getRawAxis(3) * sensitivity);
     } else { // Normal drive
-      robotDrive.arcadeDrive(driveStick.getY(), -driveStick.getX());
+      robotDrive.arcadeDrive(-driveStick.getX(), driveStick.getY());
+      // robotDrive.tankDrive(-driveStick.getY(), -driveStick.getRawAxis(3));
     }
   }
 }
